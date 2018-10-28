@@ -50,6 +50,10 @@ function normalizeAddress(address) {
 }
 
 function normalizeZip(zip) {
+  if (zip.length < 5) {
+    //pad with leading zeros
+    zip = '0'.repeat(5 - zip.length).concat(zip);
+  }
   return zip;
 }
 
