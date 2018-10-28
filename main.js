@@ -2,8 +2,6 @@ const parse = require('csv-parse');
 const stringify = require('csv-stringify');
 const normalizer = require('./normalizer');
 
-process.stdin.setEncoding('utf8');
-
 process.stdin.on('readable', () => {
   const chunk = process.stdin.read();
 
