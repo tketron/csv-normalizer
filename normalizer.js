@@ -58,7 +58,7 @@ function normalizeZip(zip) {
 }
 
 function normalizeName(name) {
-  return name;
+  return name.toLocaleUpperCase();
 }
 
 function normalizeFooBar(time) {
