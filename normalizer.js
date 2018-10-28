@@ -68,7 +68,9 @@ function normalizeName(name) {
 }
 
 function normalizeFooBar(time) {
-  return time;
+  let [hours, minutes, seconds] = time.split(':');
+  let convertedSeconds = +hours * 3600 + +minutes * 60 + +seconds;
+  return convertedSeconds;
 }
 
 function normalizeTotal(foo, bar) {
