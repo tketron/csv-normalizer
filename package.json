@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/tketron/csv-normalizer#readme",
   "dependencies": {
-    "csv": "^4.0.0"
+    "csv": "^4.0.0",
+    "moment": "^2.22.2"
   }
 }

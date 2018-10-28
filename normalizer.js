@@ -1,3 +1,5 @@
+const moment = require('moment');
+
 function normalizer(data) {
   let result = [];
   result.push(data[0]);
@@ -42,11 +44,15 @@ function constructColumnMap(columns) {
 }
 
 function normalizeTimestamp(timestamp) {
-  return timestamp;
+  let normalizedTime = moment(timestamp)
+    .utcOffset(-8, true) //set to Pacific time
+    .utcOffset(-5, false) // convert to Eastern time
+    .toISOString(true); // convert to ISO 8601 string
+  return normalizedTime;
 }
 
 function normalizeAddress(address) {
-  return address;
+  return address.normalize();
 }
 
 function normalizeZip(zip) {
@@ -70,7 +76,7 @@ function normalizeTotal(foo, bar) {
 }
 
 function normalizeNotes(notes) {
-  return notes;
+  return notes.normalize();
 }
 
 module.exports = normalizer;
